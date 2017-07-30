@@ -1,0 +1,15 @@
+{
+  "name": "Inspire Clock Tab",
+  "description": "This new tab extension will provide the user with time, date, weather of current location, and a random quote. Also, there are a ton of customization options.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": [ "activeTab" ],
+
+  "icons": {
+  "128": "icon.png"
+  },
+
+  "chrome_url_overrides" : { 
+    "newtab": "extension.html"
+  }
+  }
