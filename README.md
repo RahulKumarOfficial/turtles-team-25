@@ -13,5 +13,5 @@ Using Github-
 
 Agenda-
 1. Decide on Icon, it can be same as the New Tab Clock icon.
-2. Code extension.html and extension.css page. Add CSS file(extension.css), JS file(extension.js) and Bootstrap CDN to the HTML.
+2. Code extension.html and extension.css page. Add CSS file(extension.css), JS file(extension.js) and Bootstrap CDN scripts to the HTML.
 3. Code extension.js
