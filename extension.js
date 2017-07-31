@@ -1,3 +1,12 @@
+function getQuote() {
+	$.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?",
+		function(quote) {
+		    console.log(quote)
+		}
+	);
+}
+
+
 function startTime() {
     var today = new Date();
     var h = today.getHours();
@@ -15,7 +24,7 @@ function checkTime(i) {
 }
 
 startTime();
-
+getQuote();
 
 
 var d = new Date();
