@@ -1,3 +1,5 @@
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,500);
 /*clock datetime styles*/
 #clock {
     text-align: center;
@@ -18,7 +20,6 @@
 
 /*quote styles*/
 
-import url(http://fonts.googleapis.com/css?family=Raleway:400,500);
 .quote{
   font-family: "Raleway";
 }

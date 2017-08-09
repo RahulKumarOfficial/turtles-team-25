@@ -46,7 +46,7 @@ $('#clock').text(h + ":" + m + ":" + s );
 var t = setTimeout(startTime, 500);
 */
 
-
+/*
 
 $("#toggle-time").on("click", function toggleTime(){
     $(this).addClass("clicked");
@@ -71,7 +71,7 @@ $("#toggle-time").on("click", function toggleTime(){
     
     }   
 });
-
+*/
 
    /*
 if ($("#toggle-time").hasClass("clicked")){
