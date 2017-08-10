@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <title>Inspire Clock New Tab</title>
   <link href= "extension.css" rel ="stylesheet" type ="text/css">
-  
+  <link href= "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" >
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" >
   
 </head>
 
@@ -14,8 +15,60 @@
 
   <div id = "dateday"><span id="day"></span><span id = "comma" class = "on">, </span> <span id="month"></span> <span id = "space" class = "on"> </span> <span id="date"></span>
 	</div>
+  
+  <section id = "quote">
+    <div class="quote">
+<p class="quote-text"></p>
+
+<div class="buttons">
+<p class="author-text"></p>
+
+<a class="twitter-share-button" href="https://twitter.com/intent/tweet"data-size="large" target="_blank">
+     <i class="fa fa-twitter"></i>
+    </a>
+
+<a class="new-quote" id="refresh" href="javascript:getQuote();">
+     <i class="fa fa-refresh" aria-hidden="true"></i>
+    </a>
+</div>
+  
+  
+  </section>
 
 
+  
+
+<footer id="footer">
+
+<section id ="weather">
+<div class = "temprature">
+</div>
+<div class = "unit">
+  <a href="javascript:toggleCelcius();" id ="celcius">C </a>|<a href= "javascript:toggleFaren();" id ="farenheit"> F</a> 
+</div>
+
+<div class = "location">
+<span class = "city"></span><span>, </span><span class = "country"></span>
+</div>
+
+
+<canvas id="icon" width="110" height="110"></canvas>
+
+<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</section>
+
+<!-- settings  -->
+
+<section id = "settings">
+
+  <a id = "toggle-time" href = "javascript:toggleTime()">Toggle Time</a>
+
+</section>
+
+</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type = "text/javascript" src="extension.js"></script>
 </body>
 </html>
