@@ -36,10 +36,15 @@
   text-align: center;
 }
 
-.buttons{
-  text-align:center;
+.buttons {
+	padding: 4px;
+	text-align: center;
+	font-size: 1rem;
 }
 
+.twitter-share-button {
+ text-decoration: none;
+}
 
 /* weather styles */
 
