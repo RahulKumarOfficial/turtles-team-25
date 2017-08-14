@@ -207,24 +207,33 @@ function getWeather(lat,lon){
     var round = result.main.temp;
     var temp = Math.round(round);
     
+$(".temprature").text(temp );
+
+$(".degree").text(String.fromCharCode(176))
     
+$(".unit").text("C");
     
+$(".unit").on("click", function() {
+  window.change = function (){
+	var x = $('.unit').text();
+	if (x.indexOf('C') == -1) {
+		var a = $('.temprature').text();
+		console.log(a);
+		$('.temprature').text(Math.round((a - 32) * 500  / 9) / 100);
+		$(".unit").text('C');
+	} else {
+		var b = $('.temprature').text() * 9 / 5 + 32;
+		console.log(b);
+		$('.temprature').text(Math.round(b * 100) / 100);
+		$(".unit").text('F');
+	}
    
-    $(".temprature").text(temp +" "+ String.fromCharCode(176)); 
-    //Toggle Farenheit
-    $("#farenheit").on("click", 
- function toggleFaren(){
-     var far = temp * 9/5 +32; 
-     $(".temprature").text(Math.round(far)+" "+String.fromCharCode(176));
-      window['toggleFaren'] = toggleFaren;
- }); 
-  //Toggle Celcius
-$("#celcius").on("click", function toggleCelcius(){
+  }
+change();
+
+});
+    
   
-    $(".temprature").text(temp+" "+String.fromCharCode(176)); 
-  window['toggleCelcius'] = toggleCelcius;
-  });   
- 
         
     
     //Get weather icons
