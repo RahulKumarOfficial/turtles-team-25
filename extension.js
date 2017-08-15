@@ -1,16 +1,32 @@
 /// get time and date
 
-
-/*
-function toggleTime(){
-    alert('Hi');
-}
-*/
-$(document).ready(function() {
+//$(document).ready(function() {
  
+$('#clock12').hide();
 
-
+function ampmTime(){
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+   
+  if(h < 12){
+        $('#clock12').text(h + ":" + m + ":" + s + " AM");
+        var t = setTimeout(ampmTime, 500);
+    }
+    else{
+        h = h-12;
+        $('#clock12').text(h + ":" + m + ":" + s + " PM");
+        var t = setTimeout(ampmTime, 500);
+    }
+  
+}
+ampmTime();
+//$('#clock12').hide();
 function startTime() {
+  
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -18,84 +34,23 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
     
-    window['h'] = h;
-    if(h < 12){
-        $('#clock').text(h + ":" + m + ":" + s + " AM");
-        var t = setTimeout(startTime, 500);
-    }
-    else{
-        h = h-12;
-        $('#clock').text(h + ":" + m + ":" + s + " PM");
-        var t = setTimeout(startTime, 500);
-    }
-/*
-    if(h < 12){
-        $('#clock').text(h + ":" + m + ":" + s + " AM");
-        
-        var t = setTimeout(startTime, 500);
-    }
-    else{
-        h = h-12;
-        $('#clock').text(h + ":" + m + ":" + s + " PM");
-        var t = setTimeout(startTime, 500);
-    }
-    */
-/*
-$('#clock').text(h + ":" + m + ":" + s );
+    var twenty = $('#clock24').text(h + ":" + m + ":" + s)
+    var b = setInterval(startTime, 500);
+}
+startTime();
 
-var t = setTimeout(startTime, 500);
-*/
 
-/*
-
-$("#toggle-time").on("click", function toggleTime(){
-    $(this).addClass("clicked");
-    if($("#toggle-time").hasClass("clicked")){
-        $('#clock').text(h + ":" + m + ":" + s );
-        var t = setTimeout(startTime, 500);
-    }
-    else{
-        if ($("#toggle-time").hasClass("clicked")){
-        if(h < 12){
-        $('#clock').text(h + ":" + m + ":" + s + " AM");
-        var t = setTimeout(startTime, 500);
-        }
-        else{
-        h = h-12;
-        $('#clock').text(h + ":" + m + ":" + s + " PM");
-        var t = setTimeout(startTime, 500);
-        }
-    }
-
-    window['toggleTime'] = toggleTime;
-    
-    }   
+$('#toggle-time').click(function(){
+  $("#clock24,#clock12").toggle();
 });
-*/
 
-   /*
-if ($("#toggle-time").hasClass("clicked")){
-        if(h < 12){
-        $('#clock').text(h + ":" + m + ":" + s + " AM");
-        var t = setTimeout(startTime, 500);
-        }
-        else{
-        h = h-12;
-        $('#clock').text(h + ":" + m + ":" + s + " PM");
-        var t = setTimeout(startTime, 500);
-        }
-}
-else{
-    $('#clock').text(h + ":" + m + ":" + s);
-}
-*/
-}
+
 function checkTime(i) {
     if (i < 10) {i = "0" + i};  
     return i;
 }
 
-startTime();
+
 
 
 
@@ -136,7 +91,7 @@ var date = d.getDate();
 document.getElementById('date').innerHTML = date;
 
 
-});
+//});
 ///
 
 //Quote code
@@ -218,19 +173,16 @@ $(".unit").on("click", function() {
 	var x = $('.unit').text();
 	if (x.indexOf('C') == -1) {
 		var a = $('.temprature').text();
-		console.log(a);
 		$('.temprature').text(Math.round((a - 32) * 500  / 9) / 100);
 		$(".unit").text('C');
 	} else {
 		var b = $('.temprature').text() * 9 / 5 + 32;
-		console.log(b);
 		$('.temprature').text(Math.round(b * 100) / 100);
 		$(".unit").text('F');
 	}
    
   }
 change();
-
 });
     
   
