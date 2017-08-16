@@ -13,12 +13,12 @@ function ampmTime(){
   s = checkTime(s);
    
   if(h < 12){
-        $('#clock12').text(h + ":" + m + ":" + s + " AM");
+        $('#clock12').text(h + ":" + m + " AM");
         var t = setTimeout(ampmTime, 500);
     }
     else{
         h = h-12;
-        $('#clock12').text(h + ":" + m + ":" + s + " PM");
+        $('#clock12').text(h + ":" + m  + " PM");
         var t = setTimeout(ampmTime, 500);
     }
   
@@ -34,7 +34,7 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
     
-    var twenty = $('#clock24').text(h + ":" + m + ":" + s)
+    var twenty = $('#clock24').text(h + ":" + m );
     var b = setInterval(startTime, 500);
 }
 startTime();
