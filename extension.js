@@ -7,9 +7,12 @@ function toggleTime(){
 }
 */
 $(document).ready(function() {
+//    $('<style>').text("@font-face {font-family: 'customFont'; src: url('fonts/AmaticSC-Bold.ttf');}");
+
+    
  var images = [ 'backgrounds/light/cloudy-day.png', 'backgrounds/light/concrete-texture.png','backgrounds/light/congruent_pentagon.png','backgrounds/light/ep_naturalwhite.png','backgrounds/light/grey_@2X.png','backgrounds/light/topography.png','backgrounds/light/vertical-waves.png' ];
   $("#changeimg").on('click',function(){
-    var ind = Math.floor((Math.random() * 8) +1 );
+    var ind = Math.floor((Math.random() * (images.length)));
    // console.log(ind);
     $('body').css('background-image','url('+images[ind]+')');
   });
@@ -167,12 +170,28 @@ var getQuote = function(data) {
   $(".twitter-share-button").attr("href", quot);
 };
 
+var fonts = [ 'fonts/AmaticSC-Bold.ttf', 'fonts/Dosis-Regular.ttf', 'fonts/Inconsolata-Regular.ttf', 'fonts/Lobster-Regular.ttf', 'fonts/Monoton-Regular.ttf', 'fonts/Orbitron-Regular.ttf', 'fonts/Dosis-Regular.ttf', 'fonts/Dosis-Regular.ttf', 'fonts/Dosis-Regular.ttf' ];
+
+var changeFont = function(i) {
+    console.log(i);
+    $(".author-text").css("font-family", 'fonts/AmaticSC-Bold.ttf');
+};
+
+var x = function() {
+  var ind = Math.floor((Math.random() * (fonts.length)));
+  changeFont(fonts[ind]);
+}
+
 $(document).ready(function() {
   $.getJSON(url, getQuote, 'jsonp');
 
 });
 
 
+
+$("#font").click(function() {
+    x();
+});
 
 $("#refresh").click(function() {
   $.getJSON(url, getQuote, 'jsonp');

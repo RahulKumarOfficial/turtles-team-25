@@ -25,11 +25,17 @@
 
 /*quote styles*/
 
+@font-face {
+  font-family: 'customFont';
+  src: local('AmaticSC-Bold');
+}
+
 .quote{
-  font-family: "Raleway";
+  font-family: 'customFont';
 }
 
 .quote-text{
+  font-family: 'customFont';
   padding-top: 20px;
   font-size: 1.25rem;
   padding-bottom: 0px;
