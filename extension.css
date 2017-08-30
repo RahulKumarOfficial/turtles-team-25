@@ -25,17 +25,10 @@
 
 /*quote styles*/
 
-@font-face {
-  font-family: 'customFont';
-  src: local('AmaticSC-Bold');
-}
-
 .quote{
-  font-family: 'customFont';
 }
 
 .quote-text{
-  font-family: 'customFont';
   padding-top: 20px;
   font-size: 1.25rem;
   padding-bottom: 0px;
@@ -96,3 +89,56 @@ body{
 
   text-align: center;
 }
+
+/* Fonts definition */
+
+@font-face {
+  font-family: 'amatic';
+  src: local('AmaticSC-Bold.ttf'), url('fonts/AmaticSC-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'dosis';
+  src: local('Dosis-Regular.ttf'), url('fonts/Dosis-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'inconsolata';
+  src: local('Inconsolata-Regular.ttf'), url('fonts/Inconsolata-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'lobster';
+  src: local('Lobster-Regular.ttf'), url('fonts/Lobster-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'monoton';
+  src: local('Monoton-Regular.ttf'), url('fonts/Monoton-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'open';
+  src: local('OpenSansCondensed-Light.ttf'), url('fonts/OpenSansCondensed-Light.ttf');
+}
+
+@font-face {
+  font-family: 'orbitron';
+  src: local('Orbitron-Regular.ttf'), url('fonts/Orbitron-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'patrick';
+  src: local('PatrickHand-Regular.ttf'), url('fonts/PatrickHand-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'sacramento';
+  src: local('Sacramento-Regular.ttf'), url('fonts/Sacramento-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'source';
+  src: local('SourceCodePro-Regular.ttf'), url('fonts/SourceCodePro-Regular.ttf');
+}
+

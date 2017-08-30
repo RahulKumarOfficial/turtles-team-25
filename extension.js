@@ -170,28 +170,27 @@ var getQuote = function(data) {
   $(".twitter-share-button").attr("href", quot);
 };
 
-var fonts = [ 'fonts/AmaticSC-Bold.ttf', 'fonts/Dosis-Regular.ttf', 'fonts/Inconsolata-Regular.ttf', 'fonts/Lobster-Regular.ttf', 'fonts/Monoton-Regular.ttf', 'fonts/Orbitron-Regular.ttf', 'fonts/Dosis-Regular.ttf', 'fonts/Dosis-Regular.ttf', 'fonts/Dosis-Regular.ttf' ];
-
+var fonts = [ 'amatic', 'dosis', 'inconsolata', 'lobster', 'monoton', 'open', 'orbitron', 'patrick', 'sacramento', 'source' ];
+var prev_ind = 0, ind = 1;
 var changeFont = function(i) {
     console.log(i);
-    $(".author-text").css("font-family", 'fonts/AmaticSC-Bold.ttf');
+    $(".quote").css("font-family", i);
 };
 
 var x = function() {
-  var ind = Math.floor((Math.random() * (fonts.length)));
+    do
+  ind = Math.floor((Math.random() * (fonts.length)));
+  while (ind == prev_ind);
+  prev_ind = ind;
   changeFont(fonts[ind]);
 }
 
 $(document).ready(function() {
   $.getJSON(url, getQuote, 'jsonp');
-
 });
 
 
 
-$("#font").click(function() {
-    x();
-});
 
 $("#refresh").click(function() {
   $.getJSON(url, getQuote, 'jsonp');
