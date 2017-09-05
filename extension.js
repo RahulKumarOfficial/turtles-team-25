@@ -9,12 +9,18 @@ function toggleTime(){
 $(document).ready(function() {
 //    $('<style>').text("@font-face {font-family: 'customFont'; src: url('fonts/AmaticSC-Bold.ttf');}");
 
-    
- var images = [ 'backgrounds/light/cloudy-day.png', 'backgrounds/light/concrete-texture.png','backgrounds/light/congruent_pentagon.png','backgrounds/light/ep_naturalwhite.png','backgrounds/light/grey_@2X.png','backgrounds/light/topography.png','backgrounds/light/vertical-waves.png' ];
+
+ var images = [ 'backgrounds/light/cloudy-day.png', 'backgrounds/light/concrete-texture.png','backgrounds/light/congruent_pentagon.png','backgrounds/light/ep_naturalwhite.png','backgrounds/light/grey_@2X.png','backgrounds/light/topography.png','backgrounds/light/vertical-waves.png','backgrounds/dark/congruent_outline.png','backgrounds/dark/dark_embroidery.png','backgrounds/dark/dark-triangles.png','backgrounds/dark/footer_lodyas.png','backgrounds/dark/pink dust.png','backgrounds/dark/pink dust.png' ];
+
+
   $("#changeimg").on('click',function(){
     var ind = Math.floor((Math.random() * (images.length)));
-   // console.log(ind);
+    var ind2=Math.floor((Math.random() * (images.length)));
+    console.log(ind);
+    if(ind!=ind2)
     $('body').css('background-image','url('+images[ind]+')');
+    $('body').css('background-image','url('+images[ind+1]+')');
+
   });
 		// var index = 0;
 		// function changeImage(){
