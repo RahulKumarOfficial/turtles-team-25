@@ -5,7 +5,8 @@
   <title>Inspire Clock New Tab</title>
   <link href= "extension.css" rel ="stylesheet" type ="text/css">
   <link href= "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" >
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" >
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 </head>
 <body id="content" background="congruent_pentagon.png">
@@ -29,9 +30,7 @@
 <a class="new-quote" id="refresh" href="javascript:getQuote();">
      <i class="fa fa-refresh" aria-hidden="true"></i>
     </a>
-<a class="new-font" id="font" href="javascript:x();">
-     <i class="fa fa-refresh" aria-hidden="true"></i>
-    </a>
+
 </div>
 
 
@@ -64,11 +63,15 @@
 
 <section id = "settings">
 
-  <a id = "toggle-time" href = "javascript:toggleTime()">Toggle Time</a>
-
+  <a id ="toggle-time" href = "javascript:toggleTime()" title="Toggle Time Format" style="padding: 1rem;">Toggle Time</i></a>
+    <a id ="twelvehr" href = "javascript:#" title="Toggle Time Format" style="padding: 1rem;">12</i></a>
+    <a id ="twentyhr" href = "javascript:#" title="Toggle Time Format" style="padding: 1rem;">24</i></a>
+  <a id="new-font" href="javascript:x();" title="Change Font" style="padding: 1rem;"><i class="fa fa-font fa-lg" aria-hidden="true"></i></a>
+  <a id="change-img" href="javascript:#" title="Change Background Image" style="padding: 1rem;"><i class="fa fa-picture-o fa-lg" aria-hidden="true"></i></a>
+  <a id="google-calendar" href="#" title="Open Google Calendar" style="padding: 1rem;"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i></a>
 </section>
 <!--<div class="contents" id="content"></div>-->
-    <button id="changeimg" class="button button1">NextImage</button>
+    
 </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

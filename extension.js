@@ -1,123 +1,59 @@
 /// get time and date
 
 
-/*
-function toggleTime(){
-    alert('Hi');
-}
-*/
+
 $(document).ready(function() {
-//    $('<style>').text("@font-face {font-family: 'customFont'; src: url('fonts/AmaticSC-Bold.ttf');}");
 
 
- var images = [ 'backgrounds/light/cloudy-day.png', 'backgrounds/light/concrete-texture.png','backgrounds/light/congruent_pentagon.png','backgrounds/light/ep_naturalwhite.png','backgrounds/light/grey_@2X.png','backgrounds/light/topography.png','backgrounds/light/vertical-waves.png','backgrounds/dark/congruent_outline.png','backgrounds/dark/dark_embroidery.png','backgrounds/dark/dark-triangles.png','backgrounds/dark/footer_lodyas.png','backgrounds/dark/pink dust.png','backgrounds/dark/pink dust.png' ];
+  
+
+function ampmTime(){
+   
+   var today = new Date();
+   var h = today.getHours();
+   var m = today.getMinutes();
+   var s = today.getSeconds();
+   m = checkTime(m);
+   s = checkTime(s);
+   if(h < 12){
+         $('#clock').text(h + ":" + m + ":" + s + " AM");
+         var t = setTimeout(ampmTime, 500);
+     }
+     else{
+         h = h-12;
+         $('#clock').text(h + ":" + m + ":" + s + " PM");
+         var t = setTimeout(ampmTime, 500);
+     }
+   
+ }
+ampmTime();
+
+ 
 
 
-  $("#changeimg").on('click',function(){
-    var ind = Math.floor((Math.random() * (images.length)));
-    var ind2=Math.floor((Math.random() * (images.length)));
-    console.log(ind);
-    if(ind!=ind2)
-    $('body').css('background-image','url('+images[ind]+')');
-    $('body').css('background-image','url('+images[ind+1]+')');
+//$('#clock24').hide();
+$('#twentyhr').click(function startTime() {
+   var today = new Date();
+   var a = today.getHours();
+   var b = today.getMinutes();
+   var c = today.getSeconds();
+   b = checkTime(b);
+   c = checkTime(c);
+   var twenty = $('#clock').text(a + ":" + b + ":" + c)
+   var t = setInterval(startTime, 500);
+}
+);
 
-  });
-		// var index = 0;
-		// function changeImage(){
-		// document.getElementById('content').innerHTML=images[index];
-		// var img = images[index] ; document.getElementById('content').innerhtml('img')
-		// index++;
-		// index = index % 4; // This is for if this is the last image then goto first image I have 4 images so I've given 4 change accordingly
-		// img.src = images[index];
-		// }
-
-
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-
-    window['h'] = h;
-    if(h < 12){
-        $('#clock').text(h + ":" + m + ":" + s + " AM");
-        var t = setTimeout(startTime, 500);
-    }
-    else{
-        h = h-12;
-        $('#clock').text(h + ":" + m + ":" + s + " PM");
-        var t = setTimeout(startTime, 500);
-    }
-/*
-    if(h < 12){
-        $('#clock').text(h + ":" + m + ":" + s + " AM");
-
-        var t = setTimeout(startTime, 500);
-    }
-    else{
-        h = h-12;
-        $('#clock').text(h + ":" + m + ":" + s + " PM");
-        var t = setTimeout(startTime, 500);
-    }
-    */
-/*
-$('#clock').text(h + ":" + m + ":" + s );
-
-var t = setTimeout(startTime, 500);
-*/
-
-/*
-
-$("#toggle-time").on("click", function toggleTime(){
-    $(this).addClass("clicked");
-    if($("#toggle-time").hasClass("clicked")){
-        $('#clock').text(h + ":" + m + ":" + s );
-        var t = setTimeout(startTime, 500);
-    }
-    else{
-        if ($("#toggle-time").hasClass("clicked")){
-        if(h < 12){
-        $('#clock').text(h + ":" + m + ":" + s + " AM");
-        var t = setTimeout(startTime, 500);
-        }
-        else{
-        h = h-12;
-        $('#clock').text(h + ":" + m + ":" + s + " PM");
-        var t = setTimeout(startTime, 500);
-        }
-    }
-
-    window['toggleTime'] = toggleTime;
-
-    }
+$('#twelvehr').click(function() {
+  ampmTime();
 });
-*/
 
-   /*
-if ($("#toggle-time").hasClass("clicked")){
-        if(h < 12){
-        $('#clock').text(h + ":" + m + ":" + s + " AM");
-        var t = setTimeout(startTime, 500);
-        }
-        else{
-        h = h-12;
-        $('#clock').text(h + ":" + m + ":" + s + " PM");
-        var t = setTimeout(startTime, 500);
-        }
-}
-else{
-    $('#clock').text(h + ":" + m + ":" + s);
-}
-*/
-}
 function checkTime(i) {
     if (i < 10) {i = "0" + i};
     return i;
 }
 
-startTime();
+
 
 
 
@@ -159,9 +95,8 @@ document.getElementById('date').innerHTML = date;
 
 
 });
-///
 
-//Quote code
+//Quote code////////////////////////////////////////////////////////////////////////////////////////////
 
 var url = "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?";
 var getQuote = function(data) {
@@ -176,20 +111,6 @@ var getQuote = function(data) {
   $(".twitter-share-button").attr("href", quot);
 };
 
-var fonts = [ 'amatic', 'dosis', 'inconsolata', 'lobster', 'monoton', 'open', 'orbitron', 'patrick', 'sacramento', 'source' ];
-var prev_ind = 0, ind = 1;
-var changeFont = function(i) {
-    console.log(i);
-    $(".quote").css("font-family", i);
-};
-
-var x = function() {
-    do
-  ind = Math.floor((Math.random() * (fonts.length)));
-  while (ind == prev_ind);
-  prev_ind = ind;
-  changeFont(fonts[ind]);
-}
 
 $(document).ready(function() {
   $.getJSON(url, getQuote, 'jsonp');
@@ -205,12 +126,12 @@ $("#refresh").click(function() {
 
 $(".twitter-share").on("click", function() {
 		tweetCurrentPage();
-	});
+  });
+  
 
-///
 
 
-// Weather section
+// Weather section/////////////////////////////////////////////////////////////////////////////////////////////
 
 var lat;
 var lon;
@@ -355,3 +276,39 @@ icons.play();
 
 
 };
+
+//Settings Code//////////////////////////////////////////////////////////////////////////////////////
+
+var images = [ 'backgrounds/light/cloudy-day.png', 'backgrounds/light/concrete-texture.png','backgrounds/light/congruent_pentagon.png','backgrounds/light/ep_naturalwhite.png','backgrounds/light/grey_@2X.png','backgrounds/light/topography.png','backgrounds/light/vertical-waves.png','backgrounds/dark/congruent_outline.png','backgrounds/dark/dark_embroidery.png','backgrounds/dark/dark-triangles.png','backgrounds/dark/footer_lodyas.png','backgrounds/dark/pink dust.png','backgrounds/dark/pink dust.png' ];
+
+
+  $("#change-img").on('click',function(){
+    var ind = Math.floor((Math.random() * (images.length)));
+    var ind2=Math.floor((Math.random() * (images.length)));
+    console.log(ind);
+    if(ind!=ind2)
+    $('body').css('background-image','url('+images[ind]+')');
+    $('body').css('background-image','url('+images[ind+1]+')');
+
+  });
+
+
+$("#google-calendar").on('click', function() {
+        window.open('https://calendar.google.com/calendar/');
+    });
+
+var fonts = [ 'amatic', 'dosis', 'inconsolata', 'lobster', 'monoton', 'open', 'orbitron', 'patrick', 'sacramento', 'source' ];
+var prev_ind = 0, ind = 1;
+var changeFont = function(i) {
+    console.log(i);
+    $("body").css("font-family", i);
+};
+
+var x = function() {
+    do
+  ind = Math.floor((Math.random() * (fonts.length)));
+  while (ind == prev_ind);
+  prev_ind = ind;
+  changeFont(fonts[ind]);
+}
+
